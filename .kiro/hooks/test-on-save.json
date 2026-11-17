@@ -3,31 +3,21 @@
   "hooks": [
     {
       "name": "test-on-save",
-      "description": "Run the unit and property tests related to a saved source or test file, so a regression is caught immediately.",
-      "enabled": true,
-      "when": {
-        "type": "fileEdited",
-        "patterns": ["src/.*\\.ts$", "test/.*\\.ts$", "spike/.*\\.ts$"]
-      },
-      "then": {
+      "trigger": "PostFileSave",
+      "matcher": "(src/.*\\.ts|test/.*\\.ts|spike/.*\\.ts)$",
+      "action": {
         "type": "command",
         "command": "npx vitest related --run --reporter=dot"
-      },
-      "timeout": 120
+      }
     },
     {
       "name": "openapi-drift-on-route-change",
-      "description": "When a route or schema changes, regenerate docs/openapi.json and fail if it drifted from the committed file.",
-      "enabled": true,
-      "when": {
-        "type": "fileEdited",
-        "patterns": ["src/http/.*\\.ts$"]
-      },
-      "then": {
+      "trigger": "PostFileSave",
+      "matcher": "src/http/.*\\.ts$",
+      "action": {
         "type": "command",
         "command": "npm run openapi:check"
-      },
-      "timeout": 120
+      }
     }
   ]
 }

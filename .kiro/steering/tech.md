@@ -35,3 +35,19 @@ inclusion: always
 ```
 npm run format:check && npm run lint && npm run typecheck && npm test && npm run test:flow && npm run openapi:check && npm run build
 ```
+
+## Reporting rule (every prompt, no exceptions)
+
+At the end of every task or prompt, finish with a report titled "## Report" containing:
+
+1. **Summary** — 3 to 5 lines: what was asked, what was done, what the outcome is.
+
+2. **Details** — every file created, changed or deleted (path + one line on what changed); every command run with its result (pass/fail and the key output line); every test added with its ID and its first-run (failing) and final result.
+
+3. **Not done / not verified** — anything skipped, blocked or unobserved, with the reason.
+
+4. **Questions for the owner** — anything that needs a decision, each with a recommended default.
+
+5. **Credits used** for this prompt, if shown.
+
+Never omit the report, even for a one-line change.
