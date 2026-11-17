@@ -1,0 +1,43 @@
+{
+  "name": "reanimator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check .",
+    "lint": "oxlint .",
+    "openapi:check": "echo 'no routes yet' && exit 0",
+    "test:flow": "echo 'no flows yet' && exit 0",
+    "build": "tsc -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsoknownaszac/reanimator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alsoknownaszac/reanimator/issues"
+  },
+  "homepage": "https://github.com/alsoknownaszac/reanimator#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "fast-check": "^4.10.2",
+    "oxlint": "^1.94.0",
+    "prettier": "^3.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  },
+  "dependencies": {
+    "hyperformula": "^3.5.0",
+    "xlsx": "^0.18.5"
+  }
+}
